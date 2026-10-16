@@ -47,7 +47,7 @@ h1 { font-size: 2rem; margin: 0 0 4px; letter-spacing: -0.02em; }
 .totals span { color: var(--muted); font-size: 0.85rem; }
 
 form { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-input {
+input[type="text"], input[type="number"], input[type="url"], input:not([type]) {
   font: inherit;
   color: var(--ink);
   background: var(--surface);
@@ -58,6 +58,17 @@ input {
 }
 #name { flex: 1 1 180px; }
 #price { flex: 0 0 110px; }
+#url { flex: 1 1 100%; }
+
+.file {
+  flex: 1 1 100%;
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.file input { font: inherit; font-size: 0.9rem; color: var(--ink); min-width: 0; }
 
 button {
   font: inherit;
@@ -79,13 +90,25 @@ li {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 12px 14px;
+  padding: 10px 14px;
 }
 li input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--accent); flex: none; }
+
+.pic {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--line);
+}
+.pic.none { display: grid; place-items: center; color: var(--muted); font-size: 1.4rem; }
+
 .n { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .p { font-weight: 700; white-space: nowrap; }
 li.done .n { text-decoration: line-through; color: var(--muted); }
 li.done .p { color: var(--muted); }
+li.done .pic { opacity: 0.5; }
 
 .del { background: none; color: var(--warn); padding: 4px 8px; font-size: 1.2rem; }
 .empty { display: block; border: 0; background: none; color: var(--muted); text-align: center; padding: 28px 0; }
