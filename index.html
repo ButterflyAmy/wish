@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Wishlist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>My wishlist</h1>
+    <p class="sub">Add what you want, tick it when you've bought it.</p>
+
+    <div class="totals">
+      <div><b id="left">0.00</b><span>still to buy</span></div>
+      <div><b id="spent">0.00</b><span>already bought</span></div>
+    </div>
+
+    <form id="f">
+      <input id="name" placeholder="What do you want?" required aria-label="Item name">
+      <input id="price" type="number" min="0" step="0.01" placeholder="Price €" required aria-label="Price">
+      <button type="submit">Add item</button>
+    </form>
+
+    <ul id="list"></ul>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
